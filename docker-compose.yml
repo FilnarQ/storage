@@ -17,15 +17,14 @@ services:
       - "7090:80"
       - "7091:443"
     environment:
-      # - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_HTTPS_PORT=7091
       - ASPNETCORE_Kestrel__Certificates__Default__Password=certpass
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/cert.pfx
     volumes:
-        - ./back/cert.pfx:/https/cert.pfx:ro
+      - ./back/cert.pfx:/https/cert.pfx:ro
   mongodb:
-    image: mongo
+    image: mongo:4-focal
     environment:
     - MONGO_INITDB_ROOT_USERNAME=admin
     - MONGO_INITDB_ROOT_PASSWORD=password
