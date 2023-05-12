@@ -39,3 +39,4 @@ services:
     - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
     - ME_CONFIG_MONGODB_ADMINPASSWORD=password
     restart: unless-stopped
+        - ./back/cert.pfx:/https/cert.pfx:ro
